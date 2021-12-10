@@ -1,16 +1,20 @@
 import { useEffect, useState } from 'react';
 import { fetchData } from '../apiCalls';
 import { Counter } from '../features/counter/Counter';
+import { CurrentAmount } from '../features/currentAmount/CurrentAmount';
 import './App.css';
 
 function App() {
-  const [currentIssues, setCurrentIssues] = useState(null)
+  const [issues, setIssues] =  useState(null)
 
-  // useEffect(() => {
-  //   fetchData()
-  //   .then(data => setCurrentIssues(data))
-  //   .then(data => console.log(data))
-  // })
+  useEffect(() => {
+    if (issues === null) {
+      fetchData()
+      .then(data => setIssues(data))
+      .then(console.log('DATA SET'))
+    }
+  })
+
 
   return (
     <>
@@ -18,6 +22,8 @@ function App() {
       Hello world!
     </h1>
     <Counter />
+    <CurrentAmount />
+    {issues && <p>{issues.total_count}</p>}
     </>
   );
 }
