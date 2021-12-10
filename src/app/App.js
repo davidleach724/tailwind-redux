@@ -25,7 +25,7 @@ function App() {
     <Counter />
     <CurrentAmount /> */}
     {issues && <p>{issues.total_count}</p>}
-    <Issues />
+    {/* <Issues /> */}
     </>
   );
 }
