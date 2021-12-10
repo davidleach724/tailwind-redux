@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { fetchData } from '../apiCalls';
 import { Counter } from '../features/counter/Counter';
 import { CurrentAmount } from '../features/currentAmount/CurrentAmount';
+import { Issues } from '../features/issues/Issues';
 import './App.css';
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
     <Counter />
     <CurrentAmount /> */}
     {issues && <p>{issues.total_count}</p>}
+    <Issues />
     </>
   );
 }
