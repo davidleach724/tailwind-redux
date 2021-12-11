@@ -1,4 +1,4 @@
-export const IssuesCards = ({issues, status}) => {
+export const IssuesCards = ({issues}) => {
 
   const currentIssues = issues.items.map(issue => {
     return (
