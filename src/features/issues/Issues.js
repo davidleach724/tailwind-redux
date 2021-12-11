@@ -8,8 +8,9 @@ export const Issues = () => {
   const status = useSelector((state) => state.status.value)
 
   useEffect(() => {
-    fetchData(status)
-      .then((data) => setIssues(data))
+    console.log(status)
+    // fetchData(status)
+    //   .then((data) => setIssues(data))
   }, [status]);
 
   

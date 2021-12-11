@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-  value: 'all'
+  value: 'open'
 }
 
 const statusSlice = createSlice({
@@ -14,12 +14,9 @@ const statusSlice = createSlice({
     displayClosed: (state) => {
       state.value = 'closed'
     },
-    displayAll: (state) => {
-      state.value = 'all'
-    }
   }
 })
 
-export const { displayOpen, displayClosed, displayAll } = statusSlice.actions
+export const { displayOpen, displayClosed } = statusSlice.actions
 
 export default statusSlice.reducer
