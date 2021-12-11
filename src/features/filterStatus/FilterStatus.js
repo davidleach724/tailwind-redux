@@ -26,7 +26,7 @@ export const FilterStatus = () => {
         >
           Show All
         </button>
-        <br>{status}</br>
+        <span>{status}</span>
       </div>
     </div>
   )
