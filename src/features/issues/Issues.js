@@ -1,18 +1,24 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchIssues } from "./issuesSlice"
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { fetchData } from '../../apiCalls';
 
 export const Issues = () => {
-  const issues = useSelector((state) => state.issues.value)
-  const dispatch = useDispatch()
+  const [issues, setIssues] = useState(null);
 
-  useEffect = (() => {
-    dispatch(fetchIssues())
-  })
+ useEffect = (() => {
+   console.log('enter')
+   if (!issues) {
+     console.log('testtest')
+     setIssues('plzplz')
+   }
+ })
+
 
   return (
     <>
-      {console.log(issues)}
+      <h1>Hello</h1>
+      {issues && <p>data loaded</p>}
+      {console.log('anyone?')}
     </>
-  )
-}
+  );
+};
