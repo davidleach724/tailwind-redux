@@ -5,7 +5,6 @@ const App = () => {
 
   return (
     <>
-      <h1>Here is the Title</h1>
       <Issues />
     </>
   );

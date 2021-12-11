@@ -16,9 +16,9 @@ export const Issues = () => {
 
   return (
     <>
-      <h2>This is the issues component</h2>
       {issues && 
         <p>YouTube dislike button has {issues.total_count} issues</p>}
+        <br></br>
       {issues && <IssuesCards issues={issues} />}
     </>
   );

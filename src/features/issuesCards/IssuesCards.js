@@ -1,8 +1,11 @@
 export const IssuesCards = ({issues}) => {
-  console.log(issues)
+
   const currentIssues = issues.items.map(issue => {
     return (
-      <p>{issue.title}</p>
+      <>
+        <p>{issue.title}</p>
+        <p>{issue.number}</p>
+      </>
     )
   })
 
