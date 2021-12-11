@@ -5,23 +5,18 @@ import { IssuesCards } from '../issuesCards/IssuesCards';
 
 export const Issues = () => {
   const [issues, setIssues] = useState(null);
-  const status = useSelector((state) => state.counter.value)
+  const status = useSelector((state) => state.status.value)
 
   useEffect(() => {
-    if (!issues) {
-      fetchData(status)
-        .then((data) => setIssues(data))
-    } 
-  });
+    fetchData(status)
+      .then((data) => setIssues(data))
+  }, [status]);
 
   
 
   return (
     <>
-      {issues && 
-        <p>YouTube dislike button has {issues.total_count} issues</p>}
-        <br></br>
-      {issues && <IssuesCards issues={issues} status={status}/>}
+      {/* {issues != null && <IssuesCards issues={issues}/>} */}
     </>
   );
 };
