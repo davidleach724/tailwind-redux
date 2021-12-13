@@ -1,5 +1,5 @@
 export const fetchData = (status) => {
-  return fetch(`https://api.github.com/Anarios/return-youtube-dislike/issues?state=${status}`)
+  return fetch(`https://api.github.com/repos/Anarios/return-youtube-dislike/issues?state=${status}`)
   .then(response => response.json())
 }
 

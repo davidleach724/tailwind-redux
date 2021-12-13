@@ -14,9 +14,12 @@ const statusSlice = createSlice({
     displayClosed: (state) => {
       state.value = 'closed'
     },
+    displayFavorite: (state) => {
+      state.value = 'favorite'
+    }
   }
 })
 
-export const { displayOpen, displayClosed } = statusSlice.actions
+export const { displayOpen, displayClosed, displayFavorite } = statusSlice.actions
 
 export default statusSlice.reducer

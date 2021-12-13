@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { displayClosed, displayOpen } from "./filterStatusSlice"
+import { displayClosed, displayOpen, displayFavorite } from "./filterStatusSlice"
 
 export const FilterStatus = () => {
   const status = useSelector((state) => state.status.value)
@@ -19,6 +19,12 @@ export const FilterStatus = () => {
           onClick={() => dispatch(displayClosed())}
         >
           Show Closed
+        </button>
+        <button
+          aria-label="Show Pinned"
+          onClick={() => dispatch(displayFavorite())}
+        >
+          Show Pinned Issues
         </button>
         <span>{status}</span>
       </div>
