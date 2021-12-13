@@ -6,7 +6,7 @@ export const IssuesCards = ({issues}) => {
 
   const currentIssues = issues.map(issue => {
     return (
-      <div key={issue.id}>
+      <div key={issue.id} className="border-2 flex justify-between m-3 w-4/6">
         <p>{issue.title}</p>
         <p>{issue.number}</p>
         <button
@@ -25,8 +25,7 @@ export const IssuesCards = ({issues}) => {
   })
 
   return (
-    <div>
-      {console.log(useSelector((state) => state.favorite.value))}
+    <div  className="flex flex-col items-center">
       {currentIssues}
     </div>
   )

@@ -1,14 +1,13 @@
 import { FilterStatus } from '../features/filterStatus/FilterStatus';
 import { Issues } from '../features/issues/Issues';
-import './App.css';
 
 const App = () => {
 
   return (
-    <>
+    <div className="flex flex-col items-center" >
       <FilterStatus />  
       <Issues />
-    </>
+    </div>
   );
 }
 

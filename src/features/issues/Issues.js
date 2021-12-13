@@ -21,8 +21,8 @@ export const Issues = () => {
   
 
   return (
-    <>
+    <div>
       {issues != null && <IssuesCards issues={issues}/>}
-    </>
+    </div>
   );
 };
