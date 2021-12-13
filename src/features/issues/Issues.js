@@ -1,18 +1,28 @@
-import { useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { fetchIssues } from "./issuesSlice"
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { fetchData } from '../../apiCalls';
+import { IssuesCards } from '../issuesCards/IssuesCards';
 
 export const Issues = () => {
-  const issues = useSelector((state) => state.issues.value)
-  const dispatch = useDispatch()
+  const [issues, setIssues] = useState(null);
+  const status = useSelector((state) => state.status.value)
+  const currentFavorites = useSelector((state) => state.favorite.value)
 
-  useEffect = (() => {
-    dispatch(fetchIssues())
-  })
+  useEffect(() => {
+    console.log(status)
+    if (status === 'favorite') {
+      setIssues(currentFavorites)
+    } else {
+      fetchData(status)
+      .then((data) => setIssues(data))
+    }
+  }, [status, currentFavorites]);
+
+  
 
   return (
-    <>
-      {console.log(issues)}
-    </>
-  )
-}
+    <div>
+      {issues != null && <IssuesCards issues={issues}/>}
+    </div>
+  );
+};

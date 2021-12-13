@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from '../features/counter/counterSlice'
-import issuesReducer from '../features/issues/issuesSlice'
+import statusReducer from '../features/filterStatus/filterStatusSlice'
+import favoriteReducer from '../features/favoriteIssue/favoriteSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    issues: issuesReducer
+    status: statusReducer,
+    favorite: favoriteReducer
   },
 })

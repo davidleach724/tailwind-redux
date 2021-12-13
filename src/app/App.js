@@ -1,32 +1,13 @@
-import { useEffect, useState } from 'react';
-import { fetchData } from '../apiCalls';
-import { Counter } from '../features/counter/Counter';
-import { CurrentAmount } from '../features/currentAmount/CurrentAmount';
+import { FilterStatus } from '../features/filterStatus/FilterStatus';
 import { Issues } from '../features/issues/Issues';
-import './App.css';
 
-function App() {
-  const [issues, setIssues] =  useState(null)
-
-  useEffect(() => {
-    if (issues === null) {
-      fetchData()
-      .then(data => setIssues(data))
-      .then(console.log('DATA SET'))
-    }
-  })
-
+const App = () => {
 
   return (
-    <>
-    {/* <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <Counter />
-    <CurrentAmount /> */}
-    {issues && <p>{issues.total_count}</p>}
-    {/* <Issues /> */}
-    </>
+    <div className="flex flex-col items-center" >
+      <FilterStatus />  
+      <Issues />
+    </div>
   );
 }
 
