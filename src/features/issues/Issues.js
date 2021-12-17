@@ -9,13 +9,18 @@ export const Issues = () => {
   const currentFavorites = useSelector((state) => state.favorite.value)
 
   useEffect(() => {
-    console.log(status)
-    if (status === 'favorite') {
-      setIssues(currentFavorites)
-    } else {
-      fetchData(status)
-      .then((data) => setIssues(data))
+    if (!issues) {
+      fetchData()
+        .then(data => setIssues(data))
     }
+
+    // console.log(status)
+    // if (status === 'favorite') {
+    //   setIssues(currentFavorites)
+    // } else {
+    //   fetchData(status)
+    //   .then((data) => setIssues(data))
+    // }
   }, [status, currentFavorites]);
 
   
